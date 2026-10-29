@@ -83,7 +83,7 @@ torrent-clone-project/
 
 ## what i could have implemented (future upgrades)
 
-since this was a fast 3 hour frontend build, i kept it lightweight with vanilla js and `localStorage`. if i wanted to scale this into a full production project, here is what i could have added:
+i kept it lightweight with vanilla js and `localStorage`. if i wanted to scale this into a full production project, here is what i could have added:
 
 * **build tools & bundler (`npm` / `npx vite`):** instead of raw es6 modules, i could use **Vite** (`npx create-vite`) as a build system (kind of like CMake for web) to bundle, minify, and optimize all the js/css files into a single fast production build.
 * **real backend & database server (`Node.js` + `PostgreSQL` / `MongoDB` / `Supabase`):** right now, uploaded torrents save in `localStorage` (so only you see what you upload). hooking up an Express.js or Fastify backend with a real SQL/NoSQL database would mean anyone visiting the site sees new uploads globally in real time.
