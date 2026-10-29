@@ -1,20 +1,36 @@
+<!-- 
+add many easter eggs (okayish)
+crt overlay would be fun (done)
+a cursor which is like a sniper (done)
+a chat section (kind of)
+
+-->
+
 <!DOCTYPE html>
 <html lang="en">
-<head>
+    <!-- heading goes here (0xday/optimal torrents) -->
+<head> 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>0xday! [where all your dreams come true]</title>
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/cursor.css">
+    <link rel="stylesheet" href="css/main.css"> <!-- links to main css files-->
+    <link rel="stylesheet" href="css/cursor.css"> <!-- custom cursor files -->
 </head>
 <body>
+    <!-- would love to implement a crt overlay-->
     <div class="crt-overlay"></div>
+
+    <!-- ==========================================
+         cursor.js grabs these IDs (cursorDot, cursorRing, cursorCoord) 
+         and updates their X/Y screen position every frame.
+         ========================================== -->
 
     <div id="cursorDot" class="cursor-dot"></div>
     <div id="cursorRing" class="cursor-ring">
         <span id="cursorCoord" class="cursor-coord">0,0</span>
     </div>
-
+    
+    <!-- top nav bar-->
     <div class="wrapper">
         <header class="top-bar">
             <div class="brand" id="logoEasterEgg" title="Click 3 times for 0xday! root override" style="cursor:pointer;">
@@ -32,6 +48,7 @@
 
         <section class="recommended-strip" id="posterStrip"></section>
 
+        <!-- whole box-->
         <div id="ircBox" style="display:block; background:#0b0b0b; border:1px solid #383838; padding:8px; margin-bottom:10px; font-family:'Courier New', monospace; font-size:11px;">
             <div style="display:flex; justify-content:space-between; border-bottom:1px solid #222; padding-bottom:4px; margin-bottom:6px;">
                 <span style="color:#5cb85c; font-weight:bold;">=== irc.0xday.net // #0xday-scene (Topic: CMake is banned, seed your FLACs) ===</span>
@@ -50,6 +67,7 @@
             </form>
         </div>
 
+        <!-- left side bar -->
         <div class="main-grid">
             <aside class="left-nav">
                 <div class="box-header">Directory</div>
@@ -79,6 +97,8 @@
                     <div>[VINYL-GOD] <span class="vip-user" data-user="greenday" style="color:#99eab1; text-decoration:underline; cursor:pointer;">greenday</span></div>
                 </div>
             </aside>
+
+
 
             <main class="center-area">
                 <div class="search-box">
@@ -125,6 +145,7 @@
         </div>
     </div>
 
+    <!-- vv important for hovering over the mouse codes -->
     <div id="hoverPoster" class="hover-poster"></div>
 
     <div id="nfoModal" class="modal">

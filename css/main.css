@@ -26,7 +26,7 @@
 
 body {
     background-color: #080808;
-    background-image: radial-gradient(#171717 1px, transparent 1px);
+    background-image: radial-gradient(#171717 1px, transparent 1px); /* draws a gradient that i wanted */
     background-size: 16px 16px;
     color: #cccccc;
     font-family: Tahoma, Verdana, Arial, sans-serif;
@@ -35,12 +35,13 @@ body {
     overflow-x: hidden;
 }
 
+
 .crt-overlay {
-    position: fixed;
+    position: fixed; 
     inset: 0;
     background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.22) 50%);
     background-size: 100% 4px;
-    pointer-events: none;
+    pointer-events: none; /* was bugged here */
     z-index: 900;
 }
 
