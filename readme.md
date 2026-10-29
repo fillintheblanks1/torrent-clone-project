@@ -91,3 +91,6 @@ i kept it lightweight with vanilla js and `localStorage`. if i wanted to scale t
 * **browser-based p2p torrenting (`WebTorrent` api):** using the open-source `webtorrent` js library (which runs over WebRTC), the site could actually stream and seed real legal Linux ISOs or open-source media directly inside the browser tab without needing qBittorrent.
 * **actual `.torrent` file parser (`bencode`):** instead of typing the file size and magnet hash manually in the upload form, i could add a drag-and-drop zone that reads binary `.torrent` files, decodes the bencoded metadata, and auto-generates the infohash and file tree.
 * **tmdb / igdb api integration:** fetching real movie posters, imdb ratings, and game screenshots automatically when hovering over a release instead of text placeholders.
+
+## project presentation
+* **[View 0xday! Matrix Presentation Deck (PDF)](./0xday-presentation.pdf)*
