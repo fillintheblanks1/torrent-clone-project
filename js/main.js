@@ -183,57 +183,11 @@ function moveHover(e) {
 }
 
 function openNfo(item) {
-    document.getElementById('nfoTitle').textContent = `0xday! NFO Viewer // ${item.title}`;
-    document.getElementById('nfoContent').textContent =
-`========================================================================
- TRACKER..: 0xday! [where all your dreams come true]
- RELEASE..: ${item.title}
- CATEGORY.: ${item.cat}
- SIZE.....: ${item.size}
- ADDED....: ${item.added}
- UPLOADER.: ${item.uploader}
- SWARM....: ${item.seeds} Seeders / ${item.leeches} Leechers
- MAGNET...: ${item.magnet}
-========================================================================
-
-${item.nfo || "No extra NFO notes attached."}`;
-
-    const copyBtn = document.getElementById('nfoMagnetBtn');
-    const copyStatus = document.getElementById('copyStatus');
-    copyStatus.style.display = 'none';
-    copyBtn.style.display = 'inline-block';
-    copyBtn.onclick = () => {
-        navigator.clipboard.writeText(item.magnet);
-        copyStatus.style.display = 'inline';
-    };
-
-    nfoModal.style.display = 'flex';
+    window.location.href = `nfo.html?id=${item.id}`;
 }
 
 function openUploaderProfile(username) {
-    const profile = uploaderProfiles[username] || {
-        rank: "Scene Contributor",
-        ratio: "1.05",
-        bio: "Mysterious 0xday! peer."
-    };
-
-    document.getElementById('nfoTitle').textContent = `USER DOSSIER // ${username}`;
-    document.getElementById('nfoMagnetBtn').style.display = 'none';
-    document.getElementById('copyStatus').style.display = 'none';
-    document.getElementById('nfoContent').textContent =
-`========================================================================
- HANDLE...: ${username}
- RANK.....: ${profile.rank}
- RATIO....: ${profile.ratio}
- STATUS...: SEEDING 24/7 ON 0xday!
-========================================================================
-
-BIO / LORE:
-${profile.bio}
-
-[Click any tag or search "${username}" to filter all their uploads]`;
-
-    nfoModal.style.display = 'flex';
+    window.location.href = `nfo.html?user=${encodeURIComponent(username)}`;
 }
 
 function updateStats() {
