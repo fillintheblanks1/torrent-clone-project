@@ -1,0 +1,115 @@
+body.custom-cursor-active,
+body.custom-cursor-active a,
+body.custom-cursor-active button,
+body.custom-cursor-active input,
+body.custom-cursor-active select,
+body.custom-cursor-active textarea,
+body.custom-cursor-active li,
+body.custom-cursor-active .poster-card,
+body.custom-cursor-active .file-title,
+body.custom-cursor-active .tag {
+    cursor: none !important;
+}
+
+.cursor-dot {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 5px;
+    height: 5px;
+    background-color: #5cb85c;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    display: none;
+}
+
+.cursor-ring {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 24px;
+    height: 24px;
+    border: 1px solid rgba(220, 220, 220, 0.55);
+    pointer-events: none;
+    z-index: 9998;
+    transform: translate(-50%, -50%);
+    transition: width 0.12s ease, height 0.12s ease, border-color 0.12s ease, background-color 0.12s ease;
+    display: none;
+}
+
+body.custom-cursor-active .cursor-dot,
+body.custom-cursor-active .cursor-ring {
+    display: block;
+}
+
+.cursor-ring::before,
+.cursor-ring::after {
+    content: '';
+    position: absolute;
+    background-color: #5cb85c;
+}
+
+.cursor-ring::before {
+    top: 50%;
+    left: -4px;
+    right: -4px;
+    height: 1px;
+    background: linear-gradient(90deg, #5cb85c 20%, transparent 20%, transparent 80%, #5cb85c 80%);
+}
+
+.cursor-ring::after {
+    left: 50%;
+    top: -4px;
+    bottom: -4px;
+    width: 1px;
+    background: linear-gradient(180deg, #5cb85c 20%, transparent 20%, transparent 80%, #5cb85c 80%);
+}
+
+.cursor-ring.cursor-hover {
+    width: 34px;
+    height: 34px;
+    border-color: #5cb85c;
+    background-color: rgba(92, 184, 92, 0.08);
+}
+
+.cursor-ring.cursor-click {
+    width: 16px;
+    height: 16px;
+    border-color: #ffffff;
+}
+
+.cursor-coord {
+    position: absolute;
+    left: 28px;
+    top: 14px;
+    font-family: "Courier New", monospace;
+    font-size: 9px;
+    color: #777777;
+    white-space: nowrap;
+    pointer-events: none;
+}
+
+.click-pulse {
+    position: fixed;
+    width: 8px;
+    height: 8px;
+    border: 1px solid #5cb85c;
+    pointer-events: none;
+    z-index: 9997;
+    transform: translate(-50%, -50%);
+    animation: pulseOut 0.35s ease-out forwards;
+}
+
+@keyframes pulseOut {
+    0% {
+        width: 6px;
+        height: 6px;
+        opacity: 0.9;
+    }
+    100% {
+        width: 38px;
+        height: 38px;
+        opacity: 0;
+    }
+}

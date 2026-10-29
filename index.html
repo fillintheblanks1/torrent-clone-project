@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>0xday! [where all your dreams come true]</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/cursor.css">
+</head>
+<body>
+    <div class="crt-overlay"></div>
+
+    <div id="cursorDot" class="cursor-dot"></div>
+    <div id="cursorRing" class="cursor-ring">
+        <span id="cursorCoord" class="cursor-coord">0,0</span>
+    </div>
+
+    <div class="wrapper">
+        <header class="top-bar">
+            <div class="brand" id="logoEasterEgg" title="Click 3 times for 0xday! root override" style="cursor:pointer;">
+                <span class="status-led"></span>
+                <strong>0x<span>day!</span></strong>
+                <small>[where all your dreams come true]</small>
+            </div>
+            <div class="top-links">
+                <button type="button" class="nav-btn" id="ircToggleBtn" style="border-color:#5cb85c; color:#5cb85c;">[IRC: ONLINE]</button>
+                <button type="button" class="nav-btn" id="toggleCursorBtn">[Cursor: HUD]</button>
+                <button type="button" class="nav-btn" id="openUploadBtn">[+ Upload Release]</button>
+                <button type="button" class="nav-btn danger" id="resetDataBtn">[Purge Cache]</button>
+            </div>
+        </header>
+
+        <section class="recommended-strip" id="posterStrip"></section>
+
+        <div id="ircBox" style="display:block; background:#0b0b0b; border:1px solid #383838; padding:8px; margin-bottom:10px; font-family:'Courier New', monospace; font-size:11px;">
+            <div style="display:flex; justify-content:space-between; border-bottom:1px solid #222; padding-bottom:4px; margin-bottom:6px;">
+                <span style="color:#5cb85c; font-weight:bold;">=== irc.0xday.net // #0xday-scene (Topic: CMake is banned, seed your FLACs) ===</span>
+                <span style="color:#666;">4 Operators Online</span>
+            </div>
+            <div id="ircMessages" style="height:105px; overflow-y:auto; color:#ccc; display:flex; flex-direction:column; gap:3px; margin-bottom:6px; padding-right:4px;">
+                <div><span style="color:#666;">[23:14]</span> <span style="color:#e0d599; font-weight:bold;">&lt;@danklovic&gt;</span> who compiled the new kernel with -O99 flags my HAMBURGER!! just achieved flight</div>
+                <div><span style="color:#666;">[23:15]</span> <span style="color:#99bce0; font-weight:bold;">&lt;+merp7719&gt;</span> if anyone asks me to write a CMakeLists.txt today i am banning their subnet</div>
+                <div><span style="color:#666;">[23:16]</span> <span style="color:#ea9999; font-weight:bold;">&lt;@sabrina_bangladesh&gt;</span> just uploaded the 4K Dhaka stadium tour encode, 10Gbps fiber goes brrrrr</div>
+                <div><span style="color:#666;">[23:17]</span> <span style="color:#99eab1; font-weight:bold;">&lt;%greenday&gt;</span> guys october is almost over do i go back to sleep now or wait til next september</div>
+            </div>
+            <form id="ircForm" style="display:flex; gap:5px;">
+                <span style="color:#5cb85c; padding:4px 6px; background:#141414; border:1px solid #2e2e2e;">&lt;guest_0x&gt;</span>
+                <input type="text" id="ircInput" placeholder="Type a message in #0xday-scene (mention danklovic, cmake, sabrina, or greenday)..." style="flex:1; background:#111; border:1px solid #333; color:#eee; padding:4px 8px; font-family:inherit; font-size:11px; outline:none;">
+                <button type="submit" class="action-btn">Send</button>
+            </form>
+        </div>
+
+        <div class="main-grid">
+            <aside class="left-nav">
+                <div class="box-header">Directory</div>
+                <ul class="cat-menu" id="catMenu">
+                    <li class="active" data-cat="All"><span>*</span> All Releases</li>
+                    <li data-cat="Movies"><span>#</span> Movies (UHD/x265)</li>
+                    <li data-cat="TV"><span>#</span> TV Packs</li>
+                    <li data-cat="Games"><span>#</span> Games / Scene ISO</li>
+                    <li data-cat="Music"><span>#</span> Audio / FLAC</li>
+                    <li data-cat="Software"><span>#</span> 0day / Apps</li>
+                    <li data-cat="Linux"><span>#</span> Linux Distros</li>
+                </ul>
+
+                <div class="box-header" style="margin-top: 12px;">Swarm Telemetry</div>
+                <div class="stats-panel">
+                    <div>Indexed: <span id="statTotal">0</span></div>
+                    <div>Seeders: <span class="seed" id="statSeeds">0</span></div>
+                    <div>Leechers: <span class="leech" id="statLeeches">0</span></div>
+                    <div>Top Seed: <span style="color:#5cb85c;">danklovic</span></div>
+                </div>
+
+                <div class="box-header" style="margin-top: 12px;">Hall of Legends (Click)</div>
+                <div class="stats-panel" style="color:#888; font-size:10px;">
+                    <div style="margin-bottom:5px;">[SYSOP] <span class="vip-user" data-user="danklovic" style="color:#e0d599; text-decoration:underline; cursor:pointer;">danklovic</span></div>
+                    <div style="margin-bottom:5px;">[NO-CMAKE] <span class="vip-user" data-user="merp7719" style="color:#99bce0; text-decoration:underline; cursor:pointer;">merp7719</span></div>
+                    <div style="margin-bottom:5px;">[DHAKA-0DAY] <span class="vip-user" data-user="sabrina_bangladesh" style="color:#ea9999; text-decoration:underline; cursor:pointer;">sabrina_bangladesh</span></div>
+                    <div>[VINYL-GOD] <span class="vip-user" data-user="greenday" style="color:#99eab1; text-decoration:underline; cursor:pointer;">greenday</span></div>
+                </div>
+            </aside>
+
+            <main class="center-area">
+                <div class="search-box">
+                    <div class="search-row">
+                        <input type="text" id="searchInput" placeholder="Search 0xday! or try typing: cmake, wake me up, espresso, or 0xday...">
+                        <select id="sortSelect">
+                            <option value="seeds">Order: Seeders</option>
+                            <option value="size">Order: Size</option>
+                            <option value="date">Order: Date</option>
+                        </select>
+                        <button type="button" id="searchBtn" class="action-btn">Query</button>
+                    </div>
+                    <div class="quick-tags">
+                        Scene Tags:
+                        <span class="tag" data-tag="2160p">2160p</span>
+                        <span class="tag" data-tag="danklovic">danklovic</span>
+                        <span class="tag" data-tag="merp7719">merp7719</span>
+                        <span class="tag" data-tag="sabrina_bangladesh">sabrina_bangladesh</span>
+                        <span class="tag" data-tag="greenday">greenday</span>
+                        <span class="tag" data-tag="cmake" style="border-color:#d9534f; color:#ea9999;">[EasterEgg: cmake]</span>
+                        <span class="tag" data-tag="wake me up" style="border-color:#5cb85c; color:#99eab1;">[EasterEgg: wake me up]</span>
+                        <span class="tag" data-tag="espresso" style="border-color:#e0d599; color:#e0d599;">[EasterEgg: espresso]</span>
+                        <span class="tag clear-tag" data-tag="">[Reset]</span>
+                    </div>
+                </div>
+
+                <div id="easterEggBanner" style="display:none; margin-bottom:10px; padding:10px; border:1px solid #5cb85c; background:#111a11; color:#5cb85c; font-family:'Courier New', monospace; font-weight:bold; text-align:center;"></div>
+
+                <table class="lista2t">
+                    <thead>
+                        <tr>
+                            <th style="width: 68px;">Type</th>
+                            <th>Release File</th>
+                            <th style="width: 90px;">Added</th>
+                            <th style="width: 85px;">Size</th>
+                            <th style="width: 52px;">S.</th>
+                            <th style="width: 52px;">L.</th>
+                            <th style="width: 125px;">Uploader</th>
+                        </tr>
+                    </thead>
+                    <tbody id="torrentList"></tbody>
+                </table>
+            </main>
+        </div>
+    </div>
+
+    <div id="hoverPoster" class="hover-poster"></div>
+
+    <div id="nfoModal" class="modal">
+        <div class="modal-window">
+            <div class="modal-titlebar">
+                <span id="nfoTitle">Release Info</span>
+                <button type="button" class="close-btn" id="closeNfo">[ESC / X]</button>
+            </div>
+            <div class="modal-body">
+                <div class="nfo-actions">
+                    <button type="button" id="nfoMagnetBtn" class="action-btn">[ Copy Magnet Link ]</button>
+                    <span id="copyStatus" class="copy-toast">HASH COPIED TO CLIPBOARD</span>
+                </div>
+                <pre id="nfoContent" class="nfo-ascii"></pre>
+            </div>
+        </div>
+    </div>
+
+    <div id="uploadModal" class="modal">
+        <div class="modal-window">
+            <div class="modal-titlebar">
+                <span>Publish New 0xday! Release</span>
+                <button type="button" class="close-btn" id="closeUpload">[ESC / X]</button>
+            </div>
+            <div class="modal-body">
+                <form id="uploadForm" class="classic-form">
+                    <label>Release Name:</label>
+                    <input type="text" id="upTitle" required placeholder="Sabrina.Live.In.Dhaka.2160p-sabrina_bangladesh">
+                    
+                    <label>Category:</label>
+                    <select id="upCat">
+                        <option value="Movies">Movies</option>
+                        <option value="TV">TV</option>
+                        <option value="Games">Games</option>
+                        <option value="Music">Music</option>
+                        <option value="Software">Software</option>
+                        <option value="Linux">Linux</option>
+                    </select>
+
+                    <div style="display:flex; gap:8px;">
+                        <div style="flex:1;">
+                            <label>Display Size:</label>
+                            <input type="text" id="upSize" required placeholder="4.20 GB" style="width:100%;">
+                        </div>
+                        <div style="flex:1;">
+                            <label>Size (MB for sort):</label>
+                            <input type="number" id="upSizeBytes" required placeholder="4200" style="width:100%;">
+                        </div>
+                    </div>
+
+                    <label>Uploader Handle:</label>
+                    <input type="text" id="upUser" required placeholder="danklovic">
+
+                    <label>Magnet URI:</label>
+                    <input type="text" id="upMagnet" required placeholder="magnet:?xt=urn:btih:...">
+
+                    <label>NFO ASCII / MediaInfo:</label>
+                    <textarea id="upNfo" rows="4" placeholder="Greets to: danklovic, merp7719, sabrina_bangladesh, greenday"></textarea>
+
+                    <button type="submit" class="action-btn" style="margin-top:10px;">Commit Release</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="js/main.js"></script>
+</body>
+</html>
